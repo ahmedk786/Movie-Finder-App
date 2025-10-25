@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sardar Ahmed Movie Finder 🎬</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <audio id="bgMusic" autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/03/02/audio_0ff81a9b58.mp3" type="audio/mpeg">
-  </audio>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sardar Ahmed Movie Finder 🎬</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><span>Sardar Ahmed</span> Movie Finder 🎥</h1>
+      <nav>
+        <ul>
+          <li><button class="category-btn" data-category="Hollywood">Hollywood</button></li>
+          <li><button class="category-btn" data-category="Bollywood">Bollywood</button></li>
+          <li><button class="category-btn" data-category="Animated">Animated</button></li>
+          <li><button class="category-btn" data-category="Series">Series</button></li>
+        </ul>
+      </nav>
 
-  <nav class="navbar">
-    <h1 class="logo">🎬 Sardar Ahmed Movie Finder</h1>
-    <form id="searchForm">
-      <input type="text" id="searchInput" placeholder="Search your favorite movie..." />
-      <button type="submit">Search</button>
-    </form>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for your favorite movies..."
+        />
+        <button id="searchBtn">Search</button>
+      </div>
+    </header>
 
-    <div class="categories">
-      <button onclick="searchMovies('Hollywood')">Hollywood</button>
-      <button onclick="searchMovies('Bollywood')">Bollywood</button>
-      <button onclick="searchMovies('Animation')">Animation</button>
-      <button onclick="searchMovies('Sci-Fi')">Sci-Fi</button>
-    </div>
-  </nav>
+    <main>
+      <h2 class="section-title">🎬 Featured Movies</h2>
+      <div id="movieList" class="movie-list"></div>
+    </main>
 
-  <header class="hero-section">
-    <h2>Explore the world of movies — from classics to new hits!</h2>
-  </header>
+    <audio id="bgMusic" autoplay loop>
+      <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kevin_MacLeod/Jazz_Sampler/Kevin_MacLeod_-_Cold_Funk.mp3" type="audio/mp3" />
+    </audio>
 
-  <main id="movieContainer" class="movie-container"></main>
+    <footer>
+      <p>© 2025 Sardar Ahmed Movie Finder | Designed with ❤️ using HTML, CSS & JS</p>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
