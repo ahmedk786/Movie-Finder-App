@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* 🌈 Background with animation */
 body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
@@ -12,9 +13,6 @@ body {
   background-size: 300% 300%;
   animation: gradientShift 10s ease infinite;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 @keyframes gradientShift {
@@ -123,12 +121,12 @@ nav ul li {
   color: #ffdf00;
 }
 
-/* Movies Grid */
+/* 🎬 Movie Grid */
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 25px;
   padding: 30px 15px;
   width: 100%;
@@ -142,12 +140,12 @@ nav ul li {
   overflow: hidden;
   text-align: center;
   transition: 0.3s;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   max-width: 240px;
+  margin: 0 auto;
 }
 
 .movie:hover {
@@ -216,26 +214,29 @@ footer {
 
 @media (max-width: 600px) {
   .movie-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    justify-content: center;
+    align-items: center;
     gap: 15px;
-    justify-items: center;
     padding: 15px;
+    width: 100%;
   }
   .movie {
-    max-width: 180px;
+    max-width: 170px;
   }
-  .movie img { height: 220px; }
+  .movie img { height: 210px; }
 }
 
 @media (max-width: 420px) {
   .movie-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 12px;
     padding: 10px;
   }
   .movie {
     max-width: 160px;
+    margin: 0 auto;
   }
   .movie img { height: 200px; }
 }
