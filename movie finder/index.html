@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sardar Ahmed Movie Finder 🎬</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/02/audio_0ff81a9b58.mp3" type="audio/mpeg">
+  </audio>
+
+  <nav class="navbar">
+    <h1 class="logo">🎬 Sardar Ahmed Movie Finder</h1>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search your favorite movie..." />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="categories">
+      <button onclick="searchMovies('Hollywood')">Hollywood</button>
+      <button onclick="searchMovies('Bollywood')">Bollywood</button>
+      <button onclick="searchMovies('Animation')">Animation</button>
+      <button onclick="searchMovies('Sci-Fi')">Sci-Fi</button>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <h2>Explore the world of movies — from classics to new hits!</h2>
+  </header>
+
+  <main id="movieContainer" class="movie-container"></main>
+
+  <script src="script.js"></script>
+</body>
+</html>
