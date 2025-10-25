@@ -5,13 +5,20 @@
   font-family: "Poppins", sans-serif;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+}
+
 body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
   min-height: 100vh;
   background-size: 300% 300%;
   animation: gradientShift 10s ease infinite;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Centers content horizontally */
 }
 
 @keyframes gradientShift {
@@ -22,6 +29,7 @@ body {
 
 /* Header */
 header {
+  width: 100%;
   text-align: center;
   padding: 25px 10px;
   background: rgba(0, 0, 0, 0.5);
@@ -82,12 +90,12 @@ nav ul li {
   gap: 10px;
   margin: 20px auto;
   width: 90%;
+  max-width: 600px;
 }
 
 #searchInput {
   flex: 1;
   min-width: 180px;
-  max-width: 400px;
   padding: 10px 15px;
   border-radius: 25px;
   border: none;
@@ -124,10 +132,11 @@ nav ul li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
+  justify-items: center; /* ✅ Centers cards inside grid */
 }
 
 .movie {
@@ -140,6 +149,8 @@ nav ul li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  max-width: 240px;
 }
 
 .movie:hover {
@@ -188,15 +199,13 @@ footer {
   font-size: 0.9rem;
   color: #ccc;
   margin-top: 20px;
+  width: 100%;
 }
 
 /* ✅ Responsive Design Tweaks */
 @media (max-width: 1024px) {
   header h1 {
     font-size: 1.9rem;
-  }
-  #searchInput {
-    max-width: 350px;
   }
   .movie img {
     height: 270px;
@@ -214,15 +223,13 @@ footer {
     font-size: 0.9rem;
     padding: 8px 14px;
   }
-  .movie img {
-    height: 240px;
-  }
-  .movie h3 {
-    font-size: 0.9rem;
-  }
   .movie-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 18px;
-    padding: 20px;
+    padding: 15px;
+  }
+  .movie img {
+    height: 230px;
   }
 }
 
@@ -245,9 +252,9 @@ footer {
     width: 60%;
   }
   .movie-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
-    padding: 15px;
+    padding: 10px;
   }
   .movie img {
     height: 200px;
@@ -263,9 +270,6 @@ footer {
     grid-template-columns: 1fr;
   }
   .movie img {
-    height: 220px;
-  }
-  .movie h3 {
-    font-size: 0.85rem;
+    height: 200px;
   }
 }
